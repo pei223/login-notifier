@@ -1,0 +1,7 @@
+
+{
+  "tasks": {
+    "build": "deno compile --allow-read --allow-net src/main.ts",
+    "start": "DEBUG=true deno run --allow-all --allow-net src/main.ts"
+  }
+}
