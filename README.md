@@ -1,7 +1,35 @@
+# login-notifier
+PCログイン時にLINE通知してくれるやつ.
+
+本当はトリガー登録まで自動化したいが、めんどいのでそこは手動設定で通知部分だけ実装.
+
+# Setup/start/build
+## setup
+設定ファイルをsettings.template.jsonをコピーしてsettings.jsonとして生成.
+LINE notify APIを有効化してaccessTokenを設定.
 
 
+
+## debug start
+```
+deno task start
+```
+
+## build
+```
+deno task build
+```
+
+
+## トリガー登録
+### Windows
+ログイン時・起動時のトリガーを設定.
+実行対象はビルドしたバイナリファイルを指定.
 https://www.hide10.com/archives/26323
 
-https://www.rootlinks.net/2017/04/27/windows-10%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%AA%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AF5%E5%88%86%E9%96%93%E5%BE%85%E6%A9%9F%E3%81%99%E3%82%8B/
-
+#### 自動化する場合の参考ドキュメント
 https://dobon.net/vb/dotnet/system/osstartuprun.html
+
+
+### macOS
+https://www.pc-koubou.jp/magazine/75842
