@@ -1,7 +1,7 @@
 import { join } from "https://deno.land/std@0.197.0/path/mod.ts";
 import { delay } from "https://deno.land/x/delay@v0.2.0/mod.ts";
 import { readSetting } from "./settings/index.ts";
-import { notifyToLine } from "./api/line.ts";
+import { notifyToLineWithRetry } from "./api/line.ts";
 import { genMessage } from "./log/message.ts";
 
 const pauseSecondOnExit = 10;
@@ -23,7 +23,7 @@ try {
 
   console.log("Notifying...");
   const message = genMessage();
-  await notifyToLine(settings.accessToken, message);
+  await notifyToLineWithRetry(settings.accessToken, message);
   console.log("Notifying succeeded !");
 } catch (e) {
   if (e instanceof Deno.errors.NotFound) {
